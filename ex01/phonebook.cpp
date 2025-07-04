@@ -155,7 +155,7 @@ int ft_atoi_string(std::string s)
 }
 void Phonebook::ft_add(Phonebook &date)
 {
-	Contac contact ;
+	Contact contact ;
 	if(date._contac_count == 0)
 		std::cout << "Phonebook is empty!" << std::endl;
 	if (date._contac_count >= 8) 
@@ -169,18 +169,18 @@ void Phonebook::ft_add(Phonebook &date)
 std::cout << "Please, introduce first name: " << std::endl;
 std::getline(std::cin, temp);
 	*/
-	std::cout << "Please,intruduce first name: " << std::endl;
+	std::cout << "Please, introduce first name: " << std::endl;
 	std::getline (std::cin, temp);
 	contact.setFirstName(temp);
-	std::cout << "Please,intruduce last name: " << std::endl;
+	std::cout << "Please, introduce last name: " << std::endl;
 	std::getline (std::cin, temp);
 	contact.setLastName(temp);
 	//std::getline (std::cin,contact.getLastName());
-	std::cout << "Please,intruduce nickname: " << std::endl;
+	std::cout << "Please, introduce nickname: " << std::endl;
 	std::getline (std::cin, temp);
 	contact.setNickName(temp);
 	//std::getline (std::cin,contact.getNickname());
-	std::cout << "Please,intruduce phone number: " << std::endl;
+	std::cout << "Please, introduce phone number: " << std::endl;
 	std::getline (std::cin, temp);
 	contact.setPhoneNbr(temp);
 	//std::getline (std::cin,contact.getPhoneNumber());
@@ -189,7 +189,7 @@ std::getline(std::cin, temp);
 		std::cout << "Only valid numbers in this parameter, please type ADD and try again" << std::endl;
 		return;
 	}
-	std::cout << "Please,intruduce Darkest Secret: " << std::endl;
+	std::cout << "Please, introduce darkest secret: " << std::endl;
 	std::getline (std::cin,temp);
 	contact.setDarkestSecret(temp);
 	if(contact.getFirstName().empty() || contact.getLastName().empty()  || contact.getNickname().empty() || \

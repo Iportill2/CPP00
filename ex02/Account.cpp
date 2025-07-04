@@ -52,14 +52,20 @@ Account::~Account(void)
 }
 void	Account::_displayTimestamp( void )
 {
-    //obtener tiempo actual
-     std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-    // Convertir el tiempo actual a un formato de tiempo de C
-    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-    // Obtener la estructura tm local
-    std::tm* local_tm = std::localtime(&now_c);
-    std::cout << "[" << local_tm->tm_year + 1900 << local_tm->tm_mon + 1 << local_tm->tm_mday << "_" \
-    << local_tm->tm_hour << local_tm->tm_min << local_tm->tm_sec << "] ";
+    time_t now = time(0);
+    struct tm* ltm = localtime(&now);
+    
+    std::cout << "[" << (ltm->tm_year + 1900);
+    if (ltm->tm_mon + 1 < 10) std::cout << "0";
+    std::cout << (ltm->tm_mon + 1);
+    if (ltm->tm_mday < 10) std::cout << "0";
+    std::cout << ltm->tm_mday << "_";
+    if (ltm->tm_hour < 10) std::cout << "0";
+    std::cout << ltm->tm_hour;
+    if (ltm->tm_min < 10) std::cout << "0";
+    std::cout << ltm->tm_min;
+    if (ltm->tm_sec < 10) std::cout << "0";
+    std::cout << ltm->tm_sec << "] ";
 }
 int Account::getNbAccounts()
 {
@@ -85,8 +91,8 @@ void Account::displayAccountsInfos()
 	std::cout << "accounts:";
 	std::cout << getNbAccounts();
 	std::cout << ";total:";
-    std::cout << getTotalAmount();
-	std::cout << "deposits:";
+  	std::cout << getTotalAmount();
+	std::cout << ";deposits:";
 	std::cout << getNbDeposits();
 	std::cout << ";withdrawals:";
 	std::cout << getNbWithdrawals() << std::endl;;

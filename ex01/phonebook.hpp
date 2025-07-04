@@ -12,7 +12,7 @@
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
-# include "contac.hpp"
+# include "contact.hpp"
 # include <iostream>
 # include <cstdlib>
 # include <cstdio>
@@ -38,7 +38,7 @@ private:
 	std::string _cmd;
 	int _contac_pos;
 	int _contac_count;
-	Contac	_contact[8];
+	Contact	_contact[8];
 
 };
 

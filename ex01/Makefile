@@ -14,7 +14,7 @@ NAME = phone
 
 
 SRCS = 	main.cpp\
-		contac.cpp\
+		contact.cpp\
 		phonebook.cpp
 
 CC = c++
